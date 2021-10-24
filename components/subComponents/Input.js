@@ -2,16 +2,12 @@ import * as React from 'react';
 import {
     View,
     Image,
-    FlatList,
     Text,
     StyleSheet,
     TextInput,
-    ScrollView,
     TouchableOpacity,
 } from 'react-native';
 import colors from '../../assets/colors/colors';
-// import colors from '../assets/colors/colors';
-// import images from '../assets/images/images';
 
 export default Input = (props) => {
 
@@ -20,11 +16,7 @@ export default Input = (props) => {
             <View style={style.inputWrapper}>
                 <Text style={style.lable}>{props.lable}</Text>
                 <View style={style.inputTextWrapper}>
-                    {/* <View style={style.inputTextIcon}> */}
                         <Image style={{alignSelf: "center"}} source={props.icon}></Image>
-                    {/* </View> */}
-
-
                     <TextInput
                         style={style.input}
                         placeholder={props.placeholder}
@@ -42,8 +34,6 @@ export default Input = (props) => {
 const style = StyleSheet.create({
     inputWrapper: {
         width: "100%",
-        // padding: 10,
-        // backgroundColor: colors.blueLight, //fasdfasdfas
     },
     lable: {
         fontFamily: "Lato-Bold",
@@ -52,21 +42,18 @@ const style = StyleSheet.create({
         marginBottom: 8,
     },
     inputTextWrapper: {
-        // backgroundColor: colors.blue, //fsdfasdfad
-        paddingTop: 12,
-        paddingBottom: 12,
-        paddingLeft: 22,
-        paddingRight: 22,
+        paddingVertical: 14,
+        paddingHorizontal: 19,
         display: 'flex',
         flexDirection: 'row',
         shadowColor: colors.black,
-        borderRadius: 30,
+        borderRadius: 20,
         shadowOpacity: 0.5,
         shadowRadius: 3,
-        shadowOffset: {
-            height: 0,
-            width: 0,
-        },
+        // shadowOffset: {
+        //     height: 0,
+        //     width: 0,
+        // },
         elevation: 5,
     },
     input: {

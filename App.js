@@ -6,6 +6,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from "@react-navigation/stack";
 import Home from "./components/Home.js"
 import Login from './components/Login.js';
+import Splash from './components/Splash.js';
+import ProductDetails from './components/ProductDetails.js';
+import Navigation from './components/subComponents/Navigation.js';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +16,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen 
+        name="Splash"
+        component={Splash}
+        options={{
+          headerShown: false,
+        }}
+        />
         <Stack.Screen 
         name="Login"
         component={Login}
@@ -27,7 +37,16 @@ export default function App() {
           headerShown: false,
         }}
         />
+        <Stack.Screen 
+        name="ProductDetails"
+        component={ProductDetails}
+        options={{
+          headerShown: false,
+        }}
+        />
       </Stack.Navigator>
+      {/* <Navigation/> */}
+      <Navigation/>
     </NavigationContainer>
   );
 }

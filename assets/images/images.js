@@ -4,6 +4,22 @@ const images = {
     envelopeSimple: require('./envelopeSimple.png'),
     errorCircle: require('./errorCircle.png'),
     lock: require('./lock.png'),
+    search: require('./search.png'),
+    searchRed: require('./searchRed.png'),
+    card: require('./card.png'),
+    heart: require('./heart.png'),
+    image18: require('./image18.png'),
+    image24: require('./image24.png'),
+    store: require('./store.png'),
+    menu: require('./menu.png'),
+    cart: require('./cart.png'),
+    home: require('./home.png'),
+    account: require('./account.png'),
+    bag: require('./bag.png'),
+    location: require('./location.png'),
+    storeDark: require('./storeDark.png'),
+    minus: require('./minus.png'),
+    plus: require('./plus.png'),
 }
 
 export default images;
