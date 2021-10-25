@@ -8,7 +8,6 @@ import Home from "./components/Home.js"
 import Login from './components/Login.js';
 import Splash from './components/Splash.js';
 import ProductDetails from './components/ProductDetails.js';
-import Navigation from './components/subComponents/Navigation.js';
 
 const Stack = createStackNavigator();
 
@@ -46,7 +45,6 @@ export default function App() {
         />
       </Stack.Navigator>
       {/* <Navigation/> */}
-      <Navigation/>
     </NavigationContainer>
   );
 }

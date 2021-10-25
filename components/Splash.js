@@ -16,7 +16,7 @@ export default Splash = ({ navigation }) => {
     // console.log("colors")
     return (
         <>
-            <View  style={{backgroundColor:colors.white}}>
+            <View  style={{backgroundColor:colors.white, minHeight: "100%"}}>
                 <ScrollView
                     contentInsetAdjustmentBehavior="automatic"
                     showsVerticalScrollIndicator={false}>
@@ -38,7 +38,7 @@ export default Splash = ({ navigation }) => {
                                     <Button lable="REGISTER" />
                                 </View>
                             </View>
-                            <Text style={{ color: colors.blue, fontFamily: "Lato-Regular" }}>Skip login</Text>
+                            <Text style={{ color: colors.blue, fontFamily: "Lato-Regular", marginBottom: 20 }}>Skip login</Text>
 
 
 

@@ -1,6 +1,7 @@
 const images = {
     vector1: require('./vector1.png'),
-    topArrow: require('./vectorTopArrow.png'),
+    back: require('./back.png'),
+    backRed: require('./backRed.png'),
     envelopeSimple: require('./envelopeSimple.png'),
     errorCircle: require('./errorCircle.png'),
     lock: require('./lock.png'),
@@ -8,6 +9,7 @@ const images = {
     searchRed: require('./searchRed.png'),
     card: require('./card.png'),
     heart: require('./heart.png'),
+    heartFill: require('./heartFill.png'),
     image18: require('./image18.png'),
     image24: require('./image24.png'),
     store: require('./store.png'),

@@ -38,7 +38,7 @@ export default Home = ({navigation}) => {
 
   return (
     <>
-      {/* <View style={{ backgroundColor: colors.white }}> */}
+      {/* <View style={{backgroundColor: colors.white}}> */}
       <Header search={search} setSearch={setSearch} isWhite={true} />
       {/* Header */}
       <ScrollView
@@ -61,7 +61,13 @@ export default Home = ({navigation}) => {
             <Text style={style.sectionHeading}>Recommended for you</Text>
             <View style={style.recommendedItemsWrapper}>
               {recommendedData.map((val, ind) => {
-                return <RecommendedItem key={ind} data={val} navigation={navigation}/>;
+                return (
+                  <RecommendedItem
+                    key={ind}
+                    data={val}
+                    navigation={navigation}
+                  />
+                );
               })}
             </View>
           </View>
@@ -76,16 +82,19 @@ export default Home = ({navigation}) => {
             </View>
           </View>
 
-          <View style={{paddingHorizontal: 34, marginBottom: 99}}>
-            <Text style={{fontFamily: 'Lato-Bold', fontSize: 14}}>
+          <View style={{paddingHorizontal: 34, marginBottom: 10}}>
+            <Text
+              style={{
+                fontFamily: 'Lato-Bold',
+                color: colors.blackLight,
+                fontSize: 14,
+              }}>
               {'View all Products >'}
             </Text>
           </View>
         </SafeAreaView>
       </ScrollView>
-      {/* <View style={{position: 'absolute', top: '91%', width: '100%'}}>
-        <Navigation />
-      </View> */}
+      <Navigation />
       {/* </View> */}
     </>
   );
@@ -99,6 +108,7 @@ const randerHomeCard = ({item}) => {
           style.card,
           {
             marginLeft: item.id === 1 ? 14 : 0,
+            // marginHorizontal: item.id === 1 ? 0 : 14,
           },
         ]}>
         <Image style={style.cardImage} source={item.card}></Image>
@@ -111,18 +121,18 @@ const RecommendedItem = ({data, navigation}) => {
   return (
     <>
       <View style={style.recommendedItemWrapper}>
-        <Image style={style.recommendedItemImage} source={data.image}></Image>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('ProductDetails');
+          }}>
+          <Image style={style.recommendedItemImage} source={data.image}></Image>
+        </TouchableOpacity>
 
         <View style={style.recommendedItemDetails}>
           <Text style={style.recommendedItemName}>{data.name}</Text>
           <Text style={style.recommendedItemPrice}>{data.price}</Text>
           <View style={style.favorite}>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('ProductDetails');
-              }}>
-              <Favorite />
-            </TouchableOpacity>
+            <Favorite />
           </View>
         </View>
       </View>
@@ -144,19 +154,29 @@ const style = StyleSheet.create({
     marginTop: 10,
     marginBottom: 24,
   },
-  card: {},
+  card: {
+    // display: 'flex',
+    // alignItems: 'center',
+    // marginHorizontal: 14,
+    // height: 278,
+    // width: 361,
+    // borderRadius: 20,
+    // backgroundColor: colors.white,
+    // shadowColor: colors.black,
+    // shadowOpacity: 0.5,
+    // shadowRadius: 3,
+    // shadowOffset: {
+    //   height: 0,
+    //   width: 0,
+    // },
+    // elevation: 5,
+  },
   cardImage: {
     width: 361,
     height: 278,
+    // width: "100%",
+    // height: "100%",
     borderRadius: 20,
-    shadowColor: colors.black,
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
-    shadowOffset: {
-      height: 0,
-      width: 0,
-    },
-    // elevation: 5,
   },
   sectionWrapper: {
     paddingHorizontal: 26,
@@ -178,14 +198,15 @@ const style = StyleSheet.create({
     width: '47%',
     height: 252,
     borderRadius: 20,
+    backgroundColor: colors.white,
     shadowColor: colors.black,
-    shadowOpacity: 0.5,
-    shadowRadius: 1,
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
     shadowOffset: {
-      height: 20,
-      width: 20,
+      height: 0,
+      width: 0,
     },
-    elevation: 2,
+    elevation: 3,
   },
   recommendedItemImage: {
     width: '100%',

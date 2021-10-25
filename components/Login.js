@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Image,
@@ -9,20 +9,20 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import colors from '../assets/colors/colors';
 import images from '../assets/images/images';
 import Input from './subComponents/Input';
 import Button from './subComponents/Button';
 
-export default Login = ({navigation}) => {
+export default Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isChecked, setChecked] = useState(true);
 
   return (
     <>
-      <View style={{backgroundColor:colors.white}}>
+      <View style={{ backgroundColor: colors.white, minHeight: "100%" }}>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           showsVerticalScrollIndicator={false}>
@@ -30,7 +30,7 @@ export default Login = ({navigation}) => {
             <View style={style.topView}>
               <Image source={images.vector1} style={style.topVector} />
               <View style={style.topWrapper}>
-                <Image source={images.topArrow} />
+                <Image style={{width:24, height:24}} source={images.back} />
                 {/* </View>
                             <View> */}
                 <Text style={style.topHeading}>Start your own store!</Text>
@@ -39,17 +39,17 @@ export default Login = ({navigation}) => {
 
             {/* Loginn form */}
             <View style={style.loginFormWrapper}>
-              <View style={{marginBottom: 36}}>
+              <View style={{ marginBottom: 36 }}>
                 <Input
                   lable={'Email address'}
                   placeholder={'Enter your email'}
                   text={email}
                   setText={setEmail}
                   icon={images.envelopeSimple}
-                  // error={images.errorCircle}
+                // error={images.errorCircle}
                 />
               </View>
-              <View style={{marginBottom: 28}}>
+              <View style={{ marginBottom: 28 }}>
                 <Input
                   lable={'Password'}
                   placeholder={'Enter your password'}
@@ -61,26 +61,28 @@ export default Login = ({navigation}) => {
               </View>
 
               <View style={style.preLoginWrapper}>
-                <CheckBox
-                  style={style.checkBox}
-                  onValueChange={() => {
-                    setChecked(!isChecked);
-                  }}
-                  value={isChecked}
-                />
+                <View style={style.checkBoxWrapper}>
+                  <CheckBox
+                    style={style.checkBox}
+                    onValueChange={() => {
+                      setChecked(!isChecked);
+                    }}
+                    value={isChecked}
+                  />
+                </View>
                 <Text
                   style={[
                     style.preLoginTest,
-                    {flexGrow: 1, color: colors.black},
+                    { flexGrow: 1, color: colors.black, marginLeft: 16 },
                   ]}>
                   Keep me signed in
                 </Text>
-                <Text style={[style.preLoginTest, {color: colors.red}]}>
+                <Text style={[style.preLoginTest, { color: colors.red }]}>
                   Forgot Password?
                 </Text>
               </View>
 
-              <View style={{marginBottom: 18}}>
+              <View style={{ marginBottom: 18 }}>
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('Home');
@@ -90,10 +92,10 @@ export default Login = ({navigation}) => {
               </View>
 
               <View style={style.postLoginWrapper}>
-                <Text style={[style.preLoginTest, {color: colors.black}]}>
+                <Text style={[style.preLoginTest, { color: colors.black }]}>
                   Not registered yet?{' '}
                 </Text>
-                <Text style={[style.preLoginTest, {color: colors.red}]}>
+                <Text style={[style.preLoginTest, { color: colors.red, marginBottom: 20 }]}>
                   Create an Account
                 </Text>
               </View>
@@ -143,17 +145,22 @@ const style = StyleSheet.create({
   postLoginWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: 18,
     justifyContent: 'center',
   },
-  checkBox: {
+  checkBoxWrapper: {
     margin: 0,
     padding: 0,
     height: 20,
     width: 20,
-    marginRight: 16,
-    borderRadius: 10,
-    // color: colors.blueLight,
-    // backgroundColor: colors.blue
+    borderColor: colors.black,
+    borderWidth: 2,
+    borderRadius: 3,
+  },
+  checkBox: {
+    marginLeft: -8,
+    marginTop: -2,
+    padding: 0,
+    height: 20,
+    width: 20,
   },
 });

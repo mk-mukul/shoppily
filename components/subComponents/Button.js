@@ -57,15 +57,16 @@ const style = StyleSheet.create({
     alignSelf: 'center',
     fontFamily: 'Lato-Bold',
     fontSize: 14,
+    letterSpacing: 1,
   },
   shadow: {
     shadowColor: colors.black,
     shadowOpacity: 0.5,
-    shadowRadius: 3,
-    // shadowOffset: {
-    //   height: 0,
-    //   width: 0,
-    // },
+    shadowRadius: 0,
+    shadowOffset: {
+      height: 0,
+      width: 0,
+    },
     elevation: 5,
   },
 });

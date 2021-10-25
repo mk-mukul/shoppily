@@ -13,11 +13,19 @@ import images from '../../assets/images/images';
 
 export default Favorite = () => {
   // const navigation = useNavigation();
+  const [isFavorite, setIsFavorite] = useState(false);
 
   return (
     <>
       <View style={style.recommendedItemFavorite}>
-        <Image source={images.heart}></Image>
+        <TouchableOpacity
+          onPress={() => {
+            setIsFavorite(prev => !prev);
+          }}>
+          <Image
+            style={{width: 20, height: 18.35}}
+            source={isFavorite ? images.heartFill : images.heart}></Image>
+        </TouchableOpacity>
       </View>
     </>
   );
