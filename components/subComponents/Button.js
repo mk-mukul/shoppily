@@ -17,24 +17,34 @@ export default Button = props => {
   return (
     <>
       <View style={style.buttonWrapper}>
-        <View
-          style={[
-            style.button,
-            {
-              backgroundColor: props.isWhite ? colors.white : colors.blue,
-              borderWidth: props.isWhite ? (props.isBorder ? 2 : 0) : 0,
-            },
-            props.isShadow? style.shadow: null
-          ]}>
-          <Text
+        <View style={[style.totalWrapper, props.total ? style.shadow : null]}>
+          {props.total ? (
+            <Text style={style.total}>TOTAL: {props.total}</Text>
+          ) : null}
+          <View
             style={[
-              style.buttonText,
+              style.button,
               {
-                color: props.isWhite ? colors.black : colors.white,
+                backgroundColor: props.isWhite
+                  ? colors.white
+                  : props.bgColor
+                  ? props.bgColor
+                  : colors.blue,
+                borderWidth: props.isWhite ? (props.isBorder ? 2 : 0) : 0,
               },
+              props.isShadow ? style.shadow : null,
             ]}>
-            {props.lable}
-          </Text>
+            {props.icon?<Image style={{width: 17.5, height: 16.5,marginRight:10,}} source={props.icon} />:null}
+            <Text
+              style={[
+                style.buttonText,
+                {
+                  color: props.isWhite ? colors.black : colors.white,
+                },
+              ]}>
+              {props.lable}
+            </Text>
+          </View>
         </View>
       </View>
     </>
@@ -51,7 +61,9 @@ const style = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems:"center",
     borderRadius: 30,
+    flexGrow: 1,
   },
   buttonText: {
     alignSelf: 'center',
@@ -68,5 +80,20 @@ const style = StyleSheet.create({
       width: 0,
     },
     elevation: 5,
+  },
+  totalWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: colors.white,
+    height: 54,
+    borderRadius: 30,
+  },
+  total: {
+    marginHorizontal: 24,
+    color: colors.orange,
+    alignSelf: 'center',
+    fontFamily: 'Lato-Bold',
+    fontSize: 14,
+    letterSpacing: 1,
   },
 });

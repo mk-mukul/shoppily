@@ -14,9 +14,9 @@ export default Input = (props) => {
     return (
         <>
             <View style={style.inputWrapper}>
-                <Text style={style.lable}>{props.lable}</Text>
+                {props.lable?<Text style={style.lable}>{props.lable}</Text>:null}
                 <View style={style.inputTextWrapper}>
-                        <Image style={{alignSelf: "center",width:24, height:24}} source={props.icon}></Image>
+                        {props.icon?<Image style={{alignSelf: "center",width:24, height:24, marginRight: 16}} source={props.icon}></Image>:null}
                     <TextInput
                         style={style.input}
                         placeholder={props.placeholder}
@@ -26,7 +26,7 @@ export default Input = (props) => {
                         secureTextEntry={props.secure}
                         selectionColor={colors.black}
                     />
-                    {props.error?<Image style={{alignSelf: "center"}} source={props.error}/>:null}
+                    {props.error?<Image style={{alignSelf: "center", marginLeft: 16}} source={props.error}/>:null}
                 </View>
             </View>
         </>
@@ -60,8 +60,6 @@ const style = StyleSheet.create({
     },
     input: {
         padding: 0,
-        marginLeft:16,
-        marginRight: 16,
         marginVertical: 10,
         flexGrow: 1,
         fontFamily: "Lato-Regular",

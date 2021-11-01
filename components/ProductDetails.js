@@ -23,7 +23,7 @@ export default ProductDetails = () => {
   return (
     <>
       {/* <View style={{backgroundColor: colors.white}}> */}
-      <Header search={search} setSearch={setSearch} />
+      <Header search={search} setSearch={setSearch} isSearch={true} />
       {/* Header */}
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"

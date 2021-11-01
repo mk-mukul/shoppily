@@ -42,24 +42,26 @@ export default Header = props => {
                     color: props.isWhite ? colors.red : colors.white,
                   },
                 ]}>
-                Shoppily
+                {props.title ? props.title : 'Shoppily'}
               </Text>
-              <TouchableOpacity
-                onPress={() => {
-                  setIsSearch(true);
-                }}>
-                {props.isWhite ? (
-                  <Image
-                    style={{width: 30, height: 30}}
-                    source={images.searchRed}
-                  />
-                ) : (
-                  <Image
-                    style={{width: 30, height: 30}}
-                    source={images.search}
-                  />
-                )}
-              </TouchableOpacity>
+              {props.isSearch ? (
+                <TouchableOpacity
+                  onPress={() => {
+                    setIsSearch(true);
+                  }}>
+                  {props.isWhite ? (
+                    <Image
+                      style={{width: 30, height: 30}}
+                      source={images.searchRed}
+                    />
+                  ) : (
+                    <Image
+                      style={{width: 30, height: 30}}
+                      source={images.search}
+                    />
+                  )}
+                </TouchableOpacity>
+              ) : null}
             </>
           ) : (
             <>

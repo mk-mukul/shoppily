@@ -39,7 +39,7 @@ export default Home = ({navigation}) => {
   return (
     <>
       {/* <View style={{backgroundColor: colors.white}}> */}
-      <Header search={search} setSearch={setSearch} isWhite={true} />
+      <Header search={search} setSearch={setSearch} isSearch={true} isWhite={true} />
       {/* Header */}
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
@@ -77,21 +77,28 @@ export default Home = ({navigation}) => {
             <Text style={style.sectionHeading}>Explore by Category</Text>
             <View style={style.recommendedItemsWrapper}>
               {categories.map((val, ind) => {
-                return <Category key={ind} data={val} />;
+                return (
+                  <Category key={ind} data={val} navigation={navigation} />
+                );
               })}
             </View>
           </View>
 
-          <View style={{paddingHorizontal: 34, marginBottom: 10}}>
-            <Text
-              style={{
-                fontFamily: 'Lato-Bold',
-                color: colors.blackLight,
-                fontSize: 14,
-              }}>
-              {'View all Products >'}
-            </Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Shop');
+            }}>
+            <View style={{paddingHorizontal: 34, marginBottom: 20}}>
+              <Text
+                style={{
+                  fontFamily: 'Lato-Bold',
+                  color: colors.blackLight,
+                  fontSize: 14,
+                }}>
+                {'View all Products >'}
+              </Text>
+            </View>
+          </TouchableOpacity>
         </SafeAreaView>
       </ScrollView>
       <Navigation />
@@ -139,7 +146,7 @@ const RecommendedItem = ({data, navigation}) => {
     </>
   );
 };
-const Category = ({data}) => {
+const Category = ({data, navigation = {navigation}}) => {
   return (
     <>
       <View style={[style.category, {backgroundColor: data.color}]}>

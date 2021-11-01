@@ -13,15 +13,21 @@ const images = {
     image18: require('./image18.png'),
     image24: require('./image24.png'),
     store: require('./store.png'),
+    storeDark: require('./storeDark.png'),
     menu: require('./menu.png'),
     cart: require('./cart.png'),
     home: require('./home.png'),
     account: require('./account.png'),
     bag: require('./bag.png'),
     location: require('./location.png'),
-    storeDark: require('./storeDark.png'),
     minus: require('./minus.png'),
     plus: require('./plus.png'),
+    wallet: require('./wallet.png'),
+    storeBackground: require('./storeBackground.png'),
+    profile: require('./profile.png'),
+    razorpay: require('./razorpay.png'),
+    orderPlaced: require('./orderPlaced.png'),
+    profileEmoji: require('./profileEmoji.png'),
 }
 
 export default images;

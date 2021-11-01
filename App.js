@@ -8,6 +8,14 @@ import Home from "./components/Home.js"
 import Login from './components/Login.js';
 import Splash from './components/Splash.js';
 import ProductDetails from './components/ProductDetails.js';
+import Shop from './components/Shop.js';
+import StoreDetails from './components/StoreDetails.js';
+import ShoppingBag from './components/ShoppingBag.js';
+import Address from './components/Address.js';
+import Payment from './components/Payment.js';
+import OrderConfirmation from './components/OrderConfirmation.js';
+import MyAccount from './components/MyAccount.js';
+import SetUpShop from './components/SetUpShop.js';
 
 const Stack = createStackNavigator();
 
@@ -16,8 +24,64 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
+        name="SetUpShop"
+        component={SetUpShop}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
         name="Splash"
         component={Splash}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="MyAccount"
+        component={MyAccount}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="OrderConfirmation"
+        component={OrderConfirmation}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="Payment"
+        component={Payment}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="Address"
+        component={Address}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="ShoppingBag"
+        component={ShoppingBag}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="StoreDetails"
+        component={StoreDetails}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="Shop"
+        component={Shop}
         options={{
           headerShown: false,
         }}
