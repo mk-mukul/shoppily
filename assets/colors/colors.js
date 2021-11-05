@@ -8,6 +8,7 @@ const colors = {
     white: "#FFFFFF",
     black: "#000000",
     blackLight: "#555555",
+    blackVeryLight: "#EFEFEF",
 
 }
 

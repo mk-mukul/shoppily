@@ -22,12 +22,16 @@ const images = {
     location: require('./location.png'),
     minus: require('./minus.png'),
     plus: require('./plus.png'),
+    hollowPlus: require('./hollowPlus.png'),
+    hollowPlusOrange: require('./hollowPlusOrange.png'),
     wallet: require('./wallet.png'),
     storeBackground: require('./storeBackground.png'),
     profile: require('./profile.png'),
     razorpay: require('./razorpay.png'),
     orderPlaced: require('./orderPlaced.png'),
     profileEmoji: require('./profileEmoji.png'),
+    setUpStore: require('./setUpStore.png'),
+    imageEmoji: require('./imageEmoji.png'),
 }
 
 export default images;

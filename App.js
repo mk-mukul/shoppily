@@ -16,6 +16,11 @@ import Payment from './components/Payment.js';
 import OrderConfirmation from './components/OrderConfirmation.js';
 import MyAccount from './components/MyAccount.js';
 import SetUpShop from './components/SetUpShop.js';
+import MyStore from './components/MyStore.js';
+import StoreDashboard from './components/StoreDashboard.js';
+import StoreShop from './components/StoreShop.js';
+import AddProduct from './components/AddProduct.js';
+import SoldItems from './components/SoldItems.js';
 
 const Stack = createStackNavigator();
 
@@ -24,8 +29,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
-        name="SetUpShop"
-        component={SetUpShop}
+        name="SoldItems"
+        component={SoldItems}
         options={{
           headerShown: false,
         }}
@@ -33,6 +38,41 @@ export default function App() {
         <Stack.Screen 
         name="Splash"
         component={Splash}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="AddProduct"
+        component={AddProduct}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="StoreShop"
+        component={StoreShop}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="StoreDashboard"
+        component={StoreDashboard}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="MyStore"
+        component={MyStore}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="SetUpShop"
+        component={SetUpShop}
         options={{
           headerShown: false,
         }}
