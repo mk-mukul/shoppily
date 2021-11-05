@@ -8,13 +8,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-// import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 import colors from '../../assets/colors/colors';
 import images from '../../assets/images/images';
 
 export default Header = props => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   const [isSearch, setIsSearch] = useState(false);
 
   return (
@@ -29,11 +29,13 @@ export default Header = props => {
           ]}>
           {!isSearch ? (
             <>
-              {props.isWhite ? null : (
-                <Image
-                  style={{marginRight: 25, width: 24, height: 24}}
-                  source={images.back}
-                />
+              {props.isWhite||!props.back ? null : (
+                <TouchableOpacity onPress={() => navigation.navigate(props.back)}>
+                  <Image
+                    style={{marginRight: 25, width: 24, height: 24}}
+                    source={images.back}
+                  />
+                </TouchableOpacity>
               )}
               <Text
                 style={[

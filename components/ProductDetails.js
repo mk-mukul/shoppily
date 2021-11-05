@@ -16,14 +16,19 @@ import Navigation from './subComponents/Navigation';
 import Favorite from './subComponents/Favorite';
 import Button from './subComponents/Button';
 
-export default ProductDetails = () => {
+export default ProductDetails = ({navigation}) => {
   const [search, setSearch] = useState('');
   const [quantity, setQuantity] = useState(1);
 
   return (
     <>
       {/* <View style={{backgroundColor: colors.white}}> */}
-      <Header search={search} setSearch={setSearch} isSearch={true} />
+      <Header
+        back={'Home'}
+        search={search}
+        setSearch={setSearch}
+        isSearch={true}
+      />
       {/* Header */}
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
@@ -38,9 +43,15 @@ export default ProductDetails = () => {
           <View style={style.detailsWrapper}>
             <Text style={style.productName}>Hand Bag</Text>
             <View style={style.storeDetailsWrapper}>
-              <Image style={{width: 15.3, height: 13, marginRight:6}} source={images.storeDark} />
+              <Image
+                style={{width: 15.3, height: 13, marginRight: 6}}
+                source={images.storeDark}
+              />
               <Text style={style.storeOwner}>by Tanya</Text>
-              <Image style={{width: 12.8, height: 15,marginHorizontal: 6}} source={images.location} />
+              <Image
+                style={{width: 12.8, height: 15, marginHorizontal: 6}}
+                source={images.location}
+              />
               <Text style={style.location}>Chandighar</Text>
             </View>
             <View style={style.priceWrapper}>
@@ -64,7 +75,10 @@ export default ProductDetails = () => {
               onPress={() => {
                 setQuantity(prev => prev - 1);
               }}>
-              <Image style={{marginHorizontal: 11,width:20, height:20}} source={images.minus} />
+              <Image
+                style={{marginHorizontal: 11, width: 20, height: 20}}
+                source={images.minus}
+              />
             </TouchableOpacity>
 
             <Text style={style.quantity}>{quantity}</Text>
@@ -73,7 +87,10 @@ export default ProductDetails = () => {
               onPress={() => {
                 setQuantity(prev => prev + 1);
               }}>
-              <Image style={{marginHorizontal: 11,width:20, height:20}} source={images.plus} />
+              <Image
+                style={{marginHorizontal: 11, width: 20, height: 20}}
+                source={images.plus}
+              />
             </TouchableOpacity>
           </View>
 
@@ -90,10 +107,15 @@ export default ProductDetails = () => {
 
           <View style={[style.buttonWrapper, {marginBottom: 15}]}>
             <View style={{width: '47.5%'}}>
-              <Button lable="VISIT STORE" isWhite={true} isShadow={true} />
+              <Button
+                to={'StoreDetails'}
+                lable="VISIT STORE"
+                isWhite={true}
+                isShadow={true}
+              />
             </View>
             <View style={{width: '47.5%'}}>
-              <Button lable="ADD TO CART" />
+              <Button to={"ShoppingBag"} lable="ADD TO CART" />
             </View>
           </View>
         </SafeAreaView>

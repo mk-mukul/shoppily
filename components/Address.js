@@ -29,7 +29,7 @@ export default Address = ({ navigation }) => {
 
     return (
         <>
-            <Header title={"Address"} />
+            <Header back={"ShoppingBag"} title={"Address"} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
@@ -113,7 +113,7 @@ export default Address = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 30, marginTop: 50 }}>
-                            <Button lable="PLACE YOUR ORDER" total="$103" />
+                            <Button to={"Payment"} lable="PLACE YOUR ORDER" total="$103" />
                         </View>
 
                     </View>

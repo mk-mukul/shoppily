@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Image,
@@ -9,47 +9,47 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import colors from '../assets/colors/colors';
 import images from '../assets/images/images';
 import Input from './subComponents/Input';
 import Button from './subComponents/Button';
 
-export default Login = ({ navigation }) => {
+export default Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isChecked, setChecked] = useState(true);
 
   return (
     <>
-      <View style={{ backgroundColor: colors.white, minHeight: "100%" }}>
+      <View style={{backgroundColor: colors.white, minHeight: '100%'}}>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           showsVerticalScrollIndicator={false}>
           <SafeAreaView>
             <View style={style.topView}>
-              <Image source={images.vector1} style={style.topVector} />
+              <Image source={images.loginTop} style={style.topVector} />
               <View style={style.topWrapper}>
-                <Image style={{width:24, height:24}} source={images.back} />
-                {/* </View>
-                            <View> */}
+                <TouchableOpacity onPress={() => navigation.navigate('Splash')}>
+                  <Image style={{width: 24, height: 24}} source={images.back} />
+                </TouchableOpacity>
                 <Text style={style.topHeading}>Start your own store!</Text>
               </View>
             </View>
 
             {/* Loginn form */}
             <View style={style.loginFormWrapper}>
-              <View style={{ marginBottom: 36 }}>
+              <View style={{marginBottom: 36}}>
                 <Input
                   lable={'Email address'}
                   placeholder={'Enter your email'}
                   text={email}
                   setText={setEmail}
                   icon={images.envelopeSimple}
-                // error={images.errorCircle}
+                  // error={images.errorCircle}
                 />
               </View>
-              <View style={{ marginBottom: 28 }}>
+              <View style={{marginBottom: 28}}>
                 <Input
                   lable={'Password'}
                   placeholder={'Enter your password'}
@@ -73,29 +73,28 @@ export default Login = ({ navigation }) => {
                 <Text
                   style={[
                     style.preLoginTest,
-                    { flexGrow: 1, color: colors.black, marginLeft: 16 },
+                    {flexGrow: 1, color: colors.black, marginLeft: 16},
                   ]}>
                   Keep me signed in
                 </Text>
-                <Text style={[style.preLoginTest, { color: colors.red }]}>
+                <Text style={[style.preLoginTest, {color: colors.red}]}>
                   Forgot Password?
                 </Text>
               </View>
 
-              <View style={{ marginBottom: 18 }}>
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.navigate('Home');
-                  }}>
-                  <Button lable="LOG IN" />
-                </TouchableOpacity>
+              <View style={{marginBottom: 18}}>
+                <Button to={'Home'} lable="LOG IN" />
               </View>
 
               <View style={style.postLoginWrapper}>
-                <Text style={[style.preLoginTest, { color: colors.black }]}>
+                <Text style={[style.preLoginTest, {color: colors.black}]}>
                   Not registered yet?{' '}
                 </Text>
-                <Text style={[style.preLoginTest, { color: colors.red, marginBottom: 20 }]}>
+                <Text
+                  style={[
+                    style.preLoginTest,
+                    {color: colors.red, marginBottom: 20},
+                  ]}>
                   Create an Account
                 </Text>
               </View>
@@ -115,6 +114,8 @@ const style = StyleSheet.create({
   topVector: {
     position: 'absolute',
     top: 0,
+    width: '100%',
+    height: '100%',
   },
   topWrapper: {
     paddingTop: 25,

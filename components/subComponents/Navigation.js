@@ -21,22 +21,22 @@ export default Navigation = () => {
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Image style={{width: 20, height: 17}} source={images.home} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Splash')}>
+          <TouchableOpacity onPress={() => alert("Open cart")}>
             <Image style={{width: 18, height: 18}} source={images.cart} />
           </TouchableOpacity>
 
           <View></View>
           <View style={style.navigationStore}>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => navigation.navigate('StoreDashboard')}>
               <Image style={{width: 18, height: 16}} source={images.store} />
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <TouchableOpacity onPress={() => navigation.navigate('MyAccount')}>
             <Image style={{width: 17, height: 17}} source={images.account} />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('ProductDetails')}>
+          <TouchableOpacity onPress={() => alert("Open menu")}>
             <Image style={{width: 18, height: 12}} source={images.menu} />
           </TouchableOpacity>
         </View>

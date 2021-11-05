@@ -61,7 +61,7 @@ export default SoldItems = ({ navigation }) => {
 
     return (
         <>
-            <Header title={'Sold Items'} />
+            <Header back="StoreDashboard" title={'Sold Items'} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>

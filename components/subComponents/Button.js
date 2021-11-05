@@ -9,44 +9,61 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import colors from '../../assets/colors/colors';
 // import colors from '../assets/colors/colors';
 // import images from '../assets/images/images';
 
 export default Button = props => {
+  const navigation = useNavigation();
   return (
     <>
-      <View style={style.buttonWrapper}>
-        <View style={[style.totalWrapper, props.total ? style.shadow : null]}>
-          {props.total ? (
-            <Text style={style.total}>TOTAL: {props.total}</Text>
-          ) : null}
-          <View
-            style={[
-              style.button,
-              {
-                backgroundColor: props.isWhite
-                  ? colors.white
-                  : props.bgColor
-                  ? props.bgColor
-                  : colors.blue,
-                borderWidth: props.isWhite ? (props.isBorder ? 2 : 0) : 0,
-              },
-              props.isShadow ? style.shadow : null,
-            ]}>
-            {props.icon?<Image style={{width: 17.5, height: 16.5,marginRight:10,}} source={props.icon} />:null}
-            <Text
+      <TouchableOpacity
+        onPress={() => {
+          props.to ? navigation.navigate(props.to) : null;
+          props.alert ? alert(props.alert) : null;
+        }}>
+        <View style={style.buttonWrapper}>
+          <View style={[style.totalWrapper, props.total ? style.shadow : null]}>
+            {props.total ? (
+              <Text style={style.total}>TOTAL: {props.total}</Text>
+            ) : null}
+            <View
               style={[
-                style.buttonText,
+                style.button,
                 {
-                  color: props.isWhite ? colors.black : colors.white,
+                  backgroundColor: props.isWhite
+                    ? colors.white
+                    : props.bgColor
+                    ? props.bgColor
+                    : colors.blue,
+                  borderWidth: props.isWhite ? (props.isBorder ? 2 : 0) : 0,
                 },
+                props.isShadow ? style.shadow : null,
               ]}>
-              {props.lable}
-            </Text>
+              {props.icon ? (
+                <Image
+                  style={{width: 17.5, height: 16.5, marginRight: 10}}
+                  source={props.icon}
+                />
+              ) : null}
+              <Text
+                style={[
+                  style.buttonText,
+                  {
+                    color: props.isWhite
+                      ? props.color
+                        ? props.color
+                        : colors.black
+                      : colors.white,
+                  },
+                ]}>
+                {props.lable}
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </>
   );
 };
@@ -61,7 +78,7 @@ const style = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems:"center",
+    alignItems: 'center',
     borderRadius: 30,
     flexGrow: 1,
   },

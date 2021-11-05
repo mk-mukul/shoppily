@@ -20,7 +20,7 @@ import Header from './subComponents/Header';
 export default Payment = ({navigation}) => {
   return (
     <>
-      <Header title={'Payment'} />
+      <Header back={"Address"} title={'Payment'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         showsVerticalScrollIndicator={false}>
@@ -47,7 +47,7 @@ export default Payment = ({navigation}) => {
             </View>
 
             <View style={{marginBottom: 30, marginTop: 310}}>
-              <Button lable="PLACE YOUR ORDER" total="$103" />
+              <Button to={"OrderConfirmation"} lable="PLACE YOUR ORDER" total="$103" />
             </View>
 
           </View>

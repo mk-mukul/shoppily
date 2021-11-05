@@ -31,7 +31,7 @@ export default Shop = ({ navigation }) => {
 
     return (
         <>
-            <Header search={search} setSearch={setSearch} isSearch={true} />
+            <Header back="Home" search={search} setSearch={setSearch} isSearch={true} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>

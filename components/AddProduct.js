@@ -37,7 +37,7 @@ export default AddProduct = ({ navigation }) => {
 
     return (
         <>
-            <Header title={"Add Product"} />
+            <Header back={"StoreDashboard"} title={"Add Product"} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
@@ -122,7 +122,7 @@ export default AddProduct = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 30, marginTop: 0 }}>
-                            <Button lable="ADD PRODUCT" />
+                            <Button alert="Product added" lable="ADD PRODUCT" />
                         </View>
 
                     </View>

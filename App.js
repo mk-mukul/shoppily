@@ -21,6 +21,8 @@ import StoreDashboard from './components/StoreDashboard.js';
 import StoreShop from './components/StoreShop.js';
 import AddProduct from './components/AddProduct.js';
 import SoldItems from './components/SoldItems.js';
+import OrdeNotConfirmed from './components/OrdeNotConfirmed.js';
+import Loading from './components/Loading.js';
 
 const Stack = createStackNavigator();
 
@@ -29,15 +31,29 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen 
-        name="SoldItems"
-        component={SoldItems}
+        name="Splash"
+        component={Splash}
         options={{
           headerShown: false,
         }}
         />
         <Stack.Screen 
-        name="Splash"
-        component={Splash}
+        name="Loading"
+        component={Loading}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="OrdeNotConfirmed"
+        component={OrdeNotConfirmed}
+        options={{
+          headerShown: false,
+        }}
+        />
+        <Stack.Screen 
+        name="SoldItems"
+        component={SoldItems}
         options={{
           headerShown: false,
         }}

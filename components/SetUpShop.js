@@ -21,7 +21,7 @@ export default SetUpShop = ({ navigation }) => {
 
     return (
         <>
-            <Header title={"My Store"} />
+            <Header back={"MyAccount"} title={"My Store"} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
@@ -35,8 +35,8 @@ export default SetUpShop = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 80, marginTop: 40 }}>
-                            <Button lable="SHOW ME HOW >" />
-                        </View>
+                            <Button to={"MyStore"} lable="SHOW ME HOW >" />
+                        </View> 
 
                     </View>
                 </SafeAreaView>

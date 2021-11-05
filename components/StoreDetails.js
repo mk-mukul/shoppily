@@ -29,7 +29,7 @@ export default Shop = ({ navigation }) => {
 
     return (
         <>
-            <Header search={search} setSearch={setSearch} isSearch={true} title={"Store Name"} />
+            <Header back={"Home"} search={search} setSearch={setSearch} isSearch={true} title={"Store Name"} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>

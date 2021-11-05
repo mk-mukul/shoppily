@@ -29,7 +29,7 @@ export default ShoppingBag = ({ navigation }) => {
 
     return (
         <>
-            <Header title={"Shopping Bag"} />
+            <Header back={"ProductDetails"} title={"Shopping Bag"} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
@@ -75,7 +75,7 @@ export default ShoppingBag = ({ navigation }) => {
                         </View>
 
                         <View style={{marginBottom: 30, marginTop: 170}}>
-                            <Button lable="PLACE YOUR ORDER" total="$103" />
+                            <Button to={"Address"} lable="PLACE YOUR ORDER" total="$103" />
                         </View>
 
                     </View>

@@ -30,13 +30,14 @@ export default StoreShop = ({ navigation }) => {
 
     return (
         <>
-            <Header title={'Listings'} search={search} setSearch={setSearch} isSearch={true} />
+            <Header back="StoreDashboard" title={'Listings'} search={search} setSearch={setSearch} isSearch={true} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
                 <SafeAreaView>
                     <View style={{ backgroundColor: colors.white, paddingHorizontal: 24 }}>
 
+                        
                         <View style={style.topInfo}>
                             <Text style={style.noOfResult}>{items.length} results found</Text>
                             <View style={style.sortWrapper}>
@@ -51,11 +52,13 @@ export default StoreShop = ({ navigation }) => {
                         {/* Items */}
                         <View style={style.itemsWrapper}>
 
-                            <View style={[style.itemWrapper,style.addItemWrapper]}>
+                        <TouchableOpacity style={[style.itemWrapper,style.addItemWrapper]} onPress={() => navigation.navigate("AddProduct")}>
+                            {/* <View > */}
                                 <Image style={{width:40,height:40,marginBottom:35}} source={images.hollowPlus} />
                                 <Text style={style.addItem}>Add</Text>
                                 <Text style={style.addItem}>Product</Text>
-                            </View>
+                            {/* </View> */}
+                        </TouchableOpacity>
 
                             {items.map((val, ind) => {
                                 return (

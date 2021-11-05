@@ -20,7 +20,7 @@ import Header from './subComponents/Header';
 export default MyStore = ({ navigation }) => {
     return (
         <>
-            <Header title={'My Store'} />
+            <Header back={"SetUpShop"} title={'My Store'} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
@@ -44,7 +44,7 @@ export default MyStore = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 350 }}>
-                            <Button lable="ADD STORE" />
+                            <Button alert={"Name Your shop"} lable="ADD STORE" />
                         </View>
 
                     </View>

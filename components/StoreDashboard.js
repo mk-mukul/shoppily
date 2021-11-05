@@ -20,7 +20,7 @@ import Header from './subComponents/Header';
 export default StoreDashboard = ({ navigation }) => {
     return (
         <>
-            <Header title={'My Store'} />
+            <Header back={"Home"} title={'My Store'} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
@@ -35,16 +35,18 @@ export default StoreDashboard = ({ navigation }) => {
 
                         <View style={style.topButtonWrapper}>
                             <View style={{ width: "48%" }}>
-                                <Button icon={images.profileEmoji} isWhite={true} isShadow={true} lable="Profile" />
+                                <Button to={"MyAccount"} icon={images.profileEmoji} isWhite={true} isShadow={true} lable="Profile" />
                             </View>
                             <View style={{ width: "48%" }}>
-                                <Button icon={images.store} bgColor={colors.red} isShadow={true} lable="Your Store" />
+                                <Button alert="Open store screen" icon={images.store} bgColor={colors.red} isShadow={true} lable="Your Store" />
                             </View>
                         </View>
 
                         <View style={style.heading2Wrapper}>
                             <Text style={[style.heading2, { color: colors.black }]}>Your Listings</Text>
-                            <Text style={[style.heading2, { color: colors.orange }]}>{"See All >"}</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate("StoreShop")}>
+                                <Text style={[style.heading2, { color: colors.orange }]}>{"See All >"}</Text>
+                            </TouchableOpacity>
                         </View>
 
                         <View style={style.ordersWrapper}>
@@ -61,19 +63,19 @@ export default StoreDashboard = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 15 }}>
-                            <Button lable={"Add Product"} isWhite={true} isShadow={true} />
+                            <Button to="AddProduct" lable={"Add Product"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 15 }}>
-                            <Button lable={"Sold Items"} isWhite={true} isShadow={true} />
+                            <Button to="SoldItems" lable={"Sold Items"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 15 }}>
-                            <Button lable={"Store Notifications"} isWhite={true} isShadow={true} />
+                            <Button alert="Store Notification setting" lable={"Store Notifications"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 15 }}>
-                            <Button lable={"Help Center"} isWhite={true} isShadow={true} />
+                            <Button alert="open help center" lable={"Help Center"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 30 }}>
-                            <Button lable={"Log Out"} isWhite={true} isShadow={true} />
+                            <Button to="Login" lable={"Log Out"} isWhite={true} isShadow={true} />
                         </View>
 
                     </View>

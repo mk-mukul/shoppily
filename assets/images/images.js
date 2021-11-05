@@ -1,5 +1,5 @@
 const images = {
-    vector1: require('./vector1.png'),
+    loginTop: require('./loginTop.png'),
     back: require('./back.png'),
     backRed: require('./backRed.png'),
     envelopeSimple: require('./envelopeSimple.png'),
@@ -29,9 +29,11 @@ const images = {
     profile: require('./profile.png'),
     razorpay: require('./razorpay.png'),
     orderPlaced: require('./orderPlaced.png'),
+    orderNotPlaced: require('./orderNotPlaced.png'),
     profileEmoji: require('./profileEmoji.png'),
     setUpStore: require('./setUpStore.png'),
     imageEmoji: require('./imageEmoji.png'),
+    loadingImage: require('./loadingImage.png'),
 }
 
 export default images;

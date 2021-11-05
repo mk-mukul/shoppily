@@ -20,7 +20,7 @@ import Header from './subComponents/Header';
 export default MyAccount = ({ navigation }) => {
     return (
         <>
-            <Header title={'My Account'} />
+            <Header back={"Home"} title={'My Account'} />
             <ScrollView
                 contentInsetAdjustmentBehavior="automatic"
                 showsVerticalScrollIndicator={false}>
@@ -38,7 +38,7 @@ export default MyAccount = ({ navigation }) => {
                                 <Button icon={images.profileEmoji} isWhite={true} isShadow={true} lable="Profile" />
                             </View>
                             <View style={{ width: "48%" }}>
-                                <Button icon={images.store} bgColor={colors.red} isShadow={true} lable="Your Store" />
+                                <Button to={"SetUpShop"} icon={images.store} bgColor={colors.red} isShadow={true} lable="Your Store" />
                             </View>
                         </View>
 
@@ -61,16 +61,16 @@ export default MyAccount = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 15 }}>
-                            <Button lable={"Wish Lists"} isWhite={true} isShadow={true} />
+                            <Button alert={"Open Wish list"} lable={"Wish Lists"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 15 }}>
-                            <Button lable={"Notifications"} isWhite={true} isShadow={true} />
+                            <Button alert={"Open Notification settings"} lable={"Notifications"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 15 }}>
-                            <Button lable={"Help Center"} isWhite={true} isShadow={true} />
+                            <Button alert={"Open help center"} lable={"Help Center"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 30 }}>
-                            <Button lable={"Log Out"} isWhite={true} isShadow={true} />
+                            <Button to={"Login"} lable={"Log Out"} isWhite={true} isShadow={true} />
                         </View>
 
                     </View>
