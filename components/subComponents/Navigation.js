@@ -21,7 +21,7 @@ export default Navigation = () => {
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Image style={{width: 20, height: 17}} source={images.home} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => alert("Open cart")}>
+          <TouchableOpacity onPress={() => navigation.navigate('ShoppingBag')}>
             <Image style={{width: 18, height: 18}} source={images.cart} />
           </TouchableOpacity>
 
@@ -36,7 +36,7 @@ export default Navigation = () => {
             <Image style={{width: 17, height: 17}} source={images.account} />
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => alert("Open menu")}>
+          <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
             <Image style={{width: 18, height: 12}} source={images.menu} />
           </TouchableOpacity>
         </View>

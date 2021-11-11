@@ -34,6 +34,9 @@ const images = {
     setUpStore: require('./setUpStore.png'),
     imageEmoji: require('./imageEmoji.png'),
     loadingImage: require('./loadingImage.png'),
+    NameYourShop: require('./NameYourShop.png'),
+    workAddress: require('./workAddress.png'),
+    homeAddress: require('./homeAddress.png'),
 }
 
 export default images;

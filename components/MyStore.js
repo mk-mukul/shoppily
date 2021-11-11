@@ -44,7 +44,7 @@ export default MyStore = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 350 }}>
-                            <Button alert={"Name Your shop"} lable="ADD STORE" />
+                            <Button to={"NameYourShop"} lable="ADD STORE" />
                         </View>
 
                     </View>

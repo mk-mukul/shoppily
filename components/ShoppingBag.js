@@ -75,7 +75,7 @@ export default ShoppingBag = ({ navigation }) => {
                         </View>
 
                         <View style={{marginBottom: 30, marginTop: 170}}>
-                            <Button to={"Address"} lable="PLACE YOUR ORDER" total="$103" />
+                            <Button to={"SavedAddress"} lable="PLACE YOUR ORDER" total="$103" />
                         </View>
 
                     </View>

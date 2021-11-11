@@ -38,7 +38,7 @@ export default StoreDashboard = ({ navigation }) => {
                                 <Button to={"MyAccount"} icon={images.profileEmoji} isWhite={true} isShadow={true} lable="Profile" />
                             </View>
                             <View style={{ width: "48%" }}>
-                                <Button alert="Open store screen" icon={images.store} bgColor={colors.red} isShadow={true} lable="Your Store" />
+                                <Button to="MyStore" icon={images.store} bgColor={colors.red} isShadow={true} lable="Your Store" />
                             </View>
                         </View>
 
@@ -72,7 +72,7 @@ export default StoreDashboard = ({ navigation }) => {
                             <Button alert="Store Notification setting" lable={"Store Notifications"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 15 }}>
-                            <Button alert="open help center" lable={"Help Center"} isWhite={true} isShadow={true} />
+                            <Button to="HelpCenter" lable={"Help Center"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 30 }}>
                             <Button to="Login" lable={"Log Out"} isWhite={true} isShadow={true} />

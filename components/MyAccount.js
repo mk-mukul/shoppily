@@ -67,7 +67,7 @@ export default MyAccount = ({ navigation }) => {
                             <Button alert={"Open Notification settings"} lable={"Notifications"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 15 }}>
-                            <Button alert={"Open help center"} lable={"Help Center"} isWhite={true} isShadow={true} />
+                            <Button to={"HelpCenter"} lable={"Help Center"} isWhite={true} isShadow={true} />
                         </View>
                         <View style={{ marginBottom: 30 }}>
                             <Button to={"Login"} lable={"Log Out"} isWhite={true} isShadow={true} />

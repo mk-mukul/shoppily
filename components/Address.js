@@ -113,7 +113,7 @@ export default Address = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 30, marginTop: 50 }}>
-                            <Button to={"Payment"} lable="PLACE YOUR ORDER" total="$103" />
+                            <Button alert={"address added"} lable="PLACE YOUR ORDER" />
                         </View>
 
                     </View>

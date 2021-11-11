@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   Image,
@@ -18,11 +18,15 @@ import Navigation from './subComponents/Navigation';
 import Header from './subComponents/Header';
 
 export default Loading = ({navigation}) => {
+
+  setTimeout(() => {
+    navigation.navigate('Splash');
+  }, 1000);
+
   return (
     <>
       <SafeAreaView>
         <View style={style.mainContainer}>
-
           <View style={style.headingWrapper}>
             <Image
               style={{width: 319, height: 216, marginBottom: 19}}
@@ -30,7 +34,6 @@ export default Loading = ({navigation}) => {
             />
             <Text style={style.heading}>Shoppily</Text>
           </View>
-
         </View>
       </SafeAreaView>
     </>
@@ -48,7 +51,7 @@ const style = StyleSheet.create({
   headingWrapper: {
     display: 'flex',
     alignItems: 'center',
-    marginTop:200,
+    marginTop: 200,
   },
   heading: {
     color: colors.red,

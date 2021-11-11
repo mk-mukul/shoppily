@@ -29,12 +29,20 @@ export default Header = props => {
           ]}>
           {!isSearch ? (
             <>
-              {props.isWhite||!props.back ? null : (
-                <TouchableOpacity onPress={() => navigation.navigate(props.back)}>
-                  <Image
-                    style={{marginRight: 25, width: 24, height: 24}}
-                    source={images.back}
-                  />
+              {!props.back ? null : (
+                <TouchableOpacity
+                  onPress={() => navigation.navigate(props.back)}>
+                  {props.isWhite ? (
+                    <Image
+                      style={{marginRight: 25, width: 24, height: 24}}
+                      source={images.backRed}
+                    />
+                  ) : (
+                    <Image
+                      style={{marginRight: 25, width: 24, height: 24}}
+                      source={images.back}
+                    />
+                  )}
                 </TouchableOpacity>
               )}
               <Text

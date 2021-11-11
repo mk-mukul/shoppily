@@ -35,7 +35,7 @@ export default SetUpShop = ({ navigation }) => {
                         </View>
 
                         <View style={{ marginBottom: 80, marginTop: 40 }}>
-                            <Button to={"MyStore"} lable="SHOW ME HOW >" />
+                            <Button to={"NameYourShop"} lable="SHOW ME HOW >" />
                         </View> 
 
                     </View>

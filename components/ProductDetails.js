@@ -115,7 +115,7 @@ export default ProductDetails = ({navigation}) => {
               />
             </View>
             <View style={{width: '47.5%'}}>
-              <Button to={"ShoppingBag"} lable="ADD TO CART" />
+              <Button alert={"Product added to cart"} lable="ADD TO CART" />
             </View>
           </View>
         </SafeAreaView>
