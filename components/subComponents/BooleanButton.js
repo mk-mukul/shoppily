@@ -13,12 +13,13 @@ import images from '../../assets/images/images';
 
 export default BooleanButton = (props) => {
     // const navigation = useNavigation();
-    const [isTrue, setIsTrue] = useState(true);
+    const [isTrue, setIsTrue] = useState(props.isTrue);
     return (
         <>
             <TouchableOpacity
                 onPress={() => {
-                    setIsTrue(prev => !prev);
+                    props.setIsTrue?props.setIsTrue(prev => !prev):null;
+                    setIsTrue(prev => !prev); 
                 }}>
                 <View style={{position: "relative"}}>
                     <View style={[style.base, {

@@ -39,7 +39,12 @@ export default Home = ({navigation}) => {
   return (
     <>
       {/* <View style={{backgroundColor: colors.white}}> */}
-      <Header search={search} setSearch={setSearch} isSearch={true} isWhite={true} />
+      <Header
+        search={search}
+        setSearch={setSearch}
+        isSearch={true}
+        isWhite={true}
+      />
       {/* Header */}
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
@@ -133,15 +138,15 @@ const RecommendedItem = ({data, navigation}) => {
             navigation.navigate('ProductDetails');
           }}>
           <Image style={style.recommendedItemImage} source={data.image}></Image>
-        </TouchableOpacity>
 
-        <View style={style.recommendedItemDetails}>
-          <Text style={style.recommendedItemName}>{data.name}</Text>
-          <Text style={style.recommendedItemPrice}>{data.price}</Text>
-          <View style={style.favorite}>
-            <Favorite />
+          <View style={style.recommendedItemDetails}>
+            <Text style={style.recommendedItemName}>{data.name}</Text>
+            <Text style={style.recommendedItemPrice}>{data.price}</Text>
+            <View style={style.favorite}>
+              <Favorite />
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
       </View>
     </>
   );

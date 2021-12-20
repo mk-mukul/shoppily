@@ -27,13 +27,9 @@ export default AddProduct = ({ navigation }) => {
     const [description, setDescription] = useState("");
     const [tags, setTags] = useState("");
     const [personalization, setPersonalization] = useState("");
+    const [isPersonalization, setIsPersonalization] = useState(true);
 
-    const items = [
-        { image: images.image24, name: 'High Heels', price: '$39.99', isCoscustomizable: true },
-        { image: images.image24, name: 'High Heels', price: '$39.99', isCoscustomizable: false },
-        { image: images.wallet, name: 'Leather Wallet', price: '$149.99', isCoscustomizable: false },
-        { image: images.image18, name: 'High Heels', price: '$29.99', isCoscustomizable: false },
-    ];
+    
 
     return (
         <>
@@ -111,14 +107,16 @@ export default AddProduct = ({ navigation }) => {
 
                         <View style={style.enablePersonalizationWrapper}>
                             <Text style={style.enablePersonalization}>Enable Personalization Option</Text>
-                            <BooleanButton color={colors.red} />
+                            <BooleanButton isTrue={isPersonalization} setIsTrue={setIsPersonalization} color={colors.red} />
                         </View>
                         <View style={{ marginBottom: 80 }}>
+                            {isPersonalization?
                             <Input
-                                placeholder={'What do you want the customer to personalize?'}
-                                text={personalization}
-                                setText={setPersonalization}
-                            />
+                            placeholder={'What do you want the customer to personalize?'}
+                            text={personalization}
+                            setText={setPersonalization}
+                            />:null
+                            }
                         </View>
 
                         <View style={{ marginBottom: 30, marginTop: 0 }}>

@@ -19,25 +19,34 @@ export default Navigation = () => {
       <SafeAreaView>
         <View style={style.navigationWrapper}>
           <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-            <Image style={{width: 20, height: 17}} source={images.home} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('ShoppingBag')}>
-            <Image style={{width: 18, height: 18}} source={images.cart} />
+            <View style={style.navigationIcon}>
+              <Image style={{width: 20, height: 17}} source={images.home} />
+            </View>
           </TouchableOpacity>
 
-          <View></View>
-          <View style={style.navigationStore}>
-            <TouchableOpacity onPress={() => navigation.navigate('StoreDashboard')}>
+          <TouchableOpacity onPress={() => navigation.navigate('ShoppingBag')}>
+            <View style={style.navigationIcon}>
+              <Image style={{width: 18, height: 18}} source={images.cart} />
+            </View>
+          </TouchableOpacity>
+
+          <View style={style.navigationIcon}></View>
+          
+          <TouchableOpacity style={style.navigationStore}
+            onPress={() => navigation.navigate('StoreDashboard')}>
               <Image style={{width: 18, height: 16}} source={images.store} />
-            </TouchableOpacity>
-          </View>
+          </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate('MyAccount')}>
-            <Image style={{width: 17, height: 17}} source={images.account} />
+            <View style={style.navigationIcon}>
+              <Image style={{width: 17, height: 17}} source={images.account} />
+            </View>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate('Menu')}>
-            <Image style={{width: 18, height: 12}} source={images.menu} />
+            <View style={style.navigationIcon}>
+              <Image style={{width: 18, height: 12}} source={images.menu} />
+            </View>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -54,7 +63,8 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 25,
+    paddingHorizontal: 25,
+    paddingVertical: 8,
     shadowColor: colors.black,
     shadowOpacity: 0.8,
     shadowRadius: 30,
@@ -75,5 +85,14 @@ const style = StyleSheet.create({
     position: 'absolute',
     top: 0,
     right: '50%',
+  },
+  navigationIcon: {
+    backgroundColor: colors.white,
+    width: 53,
+    height: 53,
+    borderRadius: 26.5,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

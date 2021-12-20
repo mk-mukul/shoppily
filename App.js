@@ -36,6 +36,13 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="Loading"
           component={Loading}
           options={{
@@ -185,13 +192,6 @@ export default function App() {
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Home"
-          component={Home}
           options={{
             headerShown: false,
           }}

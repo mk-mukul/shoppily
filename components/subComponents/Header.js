@@ -30,7 +30,9 @@ export default Header = props => {
           {!isSearch ? (
             <>
               {!props.back ? null : (
-                <TouchableOpacity
+                <TouchableOpacity style={[style.backNavigation,{
+                  backgroundColor: props.isWhite?colors.white:colors.red
+                }]}
                   onPress={() => navigation.navigate(props.back)}>
                   {props.isWhite ? (
                     <Image
@@ -55,7 +57,7 @@ export default Header = props => {
                 {props.title ? props.title : 'Shoppily'}
               </Text>
               {props.isSearch ? (
-                <TouchableOpacity
+                <TouchableOpacity 
                   onPress={() => {
                     setIsSearch(true);
                   }}>
@@ -75,7 +77,9 @@ export default Header = props => {
             </>
           ) : (
             <>
-              <TouchableOpacity
+              <TouchableOpacity style={[style.backNavigation,{
+                  backgroundColor: props.isWhite?colors.white:colors.red
+                }]}
                 style={{}}
                 onPress={() => {
                   setIsSearch(false);
@@ -126,7 +130,7 @@ const Search = props => {
 
 const style = StyleSheet.create({
   headerWrapper: {
-    paddingVertical: 15,
+    paddingVertical: 8,
     paddingHorizontal: 25,
     display: 'flex',
     flexDirection: 'row',
@@ -155,5 +159,14 @@ const style = StyleSheet.create({
     fontFamily: 'Lato-Bold',
     color: colors.red,
     fontSize: 14,
+  },
+  backNavigation: {
+    // backgroundColor: colors.white,
+    width: 53,
+    height: 53,
+    borderRadius: 26.5,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

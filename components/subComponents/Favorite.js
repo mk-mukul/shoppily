@@ -17,16 +17,16 @@ export default Favorite = () => {
 
   return (
     <>
-      <View style={style.recommendedItemFavorite}>
-        <TouchableOpacity
-          onPress={() => {
-            setIsFavorite(prev => !prev);
-          }}>
+      <TouchableOpacity
+        onPress={() => {
+          setIsFavorite(prev => !prev);
+        }}>
+        <View style={style.recommendedItemFavorite}>
           <Image
-            style={{width: 20, height: 18.35}}
+            style={{width: 20, height: 18.35, marginTop: 2}}
             source={isFavorite ? images.heartFill : images.heart}></Image>
-        </TouchableOpacity>
-      </View>
+        </View>
+      </TouchableOpacity>
     </>
   );
 };
