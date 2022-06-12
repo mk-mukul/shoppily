@@ -36,15 +36,15 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="Loading"
+          component={Loading}
           options={{
             headerShown: false,
           }}
         />
         <Stack.Screen
-          name="Loading"
-          component={Loading}
+          name="Home"
+          component={Home}
           options={{
             headerShown: false,
           }}
